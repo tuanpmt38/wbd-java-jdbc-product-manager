@@ -1,7 +1,6 @@
 package services;
 
 import model.Product;
-import repository.ProductMysqlRepository;
 
 import java.io.IOException;
 import java.sql.*;
@@ -73,7 +72,7 @@ public class ProductServicesIplm implements ProductServices {
         statement.setDouble(3, product.getPrice());
         statement.setInt(4, product.getCategory_id());
 
-        int resultSet = statement.executeUpdate(sql);
+        int resultSet = statement.executeUpdate();
         System.out.println("it's work?" + resultSet);
 
         statement.close();
